@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: "Roboto", Arial, sans-serif;
     background-color: #fcf4e9;
@@ -289,6 +293,83 @@ a:focus-visible, summary:focus-visible{
     font-size: 14px;
     line-height: 1.4;
 }
+/* Apresentação Profissional */
+.profissional{
+    background-color: #043F6E;
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.profissional img{
+    max-width: 85%;
+    border-radius: 24px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.profissional-conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 600px;
+}
+
+.profissional-apresentacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profissional-apresentacao-cro{
+    padding-bottom: 24px;
+}
+
+.profissional-apresentacao h2,
+.profissional-apresentacao-cro p{
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.profissional-conteudo p{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.profissional-ali{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.profissional-botao{
+    cursor: pointer;
+    background-color: #FFFFFF;
+    color: #043F6E;
+    border: 0;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-top: 17px;
+}
+
+.profissional-botao:hover {
+    transform: scale(1.1);
+}
 
 /* A partir de 768px, muda apenas o necessário para telas maiores.
    Esta adaptação ainda precisa ser comparada ao seu Figma desktop. */
@@ -373,4 +454,22 @@ a:focus-visible, summary:focus-visible{
         gap: 16px;
     }
 
+    .profissional{
+        flex-direction: row;
+        gap: 120px;
+        padding: 45px 44px 73px 44px;
+    }
+
+    .profissional img{
+        max-width: 300px;
+    }
+
+    .profissional-conteudo{
+        align-items: flex-start;
+    }
+
+    .profissional-conteudo p{
+        text-align: left;
+        font-size: 17px;
+    }
 }
