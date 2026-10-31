@@ -47,6 +47,9 @@ a:focus-visible, summary:focus-visible{
 /* Cabeçalho: logo e menu lado a lado com Flexbox. */
 .cabecalho{
     background-color: #dac8b3;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .cabecalho-conteudo{
