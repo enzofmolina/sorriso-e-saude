@@ -222,6 +222,109 @@ a:focus-visible, summary:focus-visible{
     object-fit: cover;
 }
 
+/*carrossel de imagens da clínica*/
+.carrossel-container{
+    width: 100%;
+    max-width: 380px;
+    padding: 18px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #064773;
+}
+
+.carrossel{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+.carrossel-item{
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.carrossel-item img{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.carrossel-item {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #064773B3; 
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    z-index: 2;
+}
+
+.carrossel-btn:hover {
+    background-color: #043F6E;
+}
+
+.carrossel-btn.prev { left: 25px; }
+.carrossel-btn.next { right: 25px; }
+
+.carrossel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.carrossel-container:has(#slide-1:target) .indicator:nth-child(1),
+.carrossel-container:has(#slide-2:target) .indicator:nth-child(2),
+.carrossel-container:has(#slide-3:target) .indicator:nth-child(3),
+.carrossel-container:has(#slide-4:target) .indicator:nth-child(4),
+.carrossel-container:has(#slide-5:target) .indicator:nth-child(5),
+.carrossel-container:has(#slide-6:target) .indicator:nth-child(6) {
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
+
+.carrossel-container:not(:has(:target)) .indicator:nth-child(1) {
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
+
 /* Contato provisório para o botão ter um destino nesta primeira etapa. */
 .contato{
     padding: 32px 20px;
@@ -436,8 +539,9 @@ a:focus-visible, summary:focus-visible{
         font-size: 16px;
     }
 
-    .foto-clinica{
+    .carrosel-container{
         flex: 1;
+        max-width: 480px;
     }
 
     .tratamentos{
