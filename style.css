@@ -224,6 +224,7 @@ a:focus-visible, summary:focus-visible{
 
 /*carrossel de imagens da clínica*/
 .carrossel-container{
+    min-width: 0;
     width: 100%;
     max-width: 380px;
     padding: 18px;
@@ -295,14 +296,17 @@ a:focus-visible, summary:focus-visible{
 .carrossel-btn.prev { left: 25px; }
 .carrossel-btn.next { right: 25px; }
 
-.carrossel-indicators {
+.carrossel-indicadores {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-top: 15px;
 }
 
-.indicator {
+.indicador {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -310,19 +314,18 @@ a:focus-visible, summary:focus-visible{
     transition: background-color 0.3s, transform 0.2s;
 }
 
-.carrossel-container:has(#slide-1:target) .indicator:nth-child(1),
-.carrossel-container:has(#slide-2:target) .indicator:nth-child(2),
-.carrossel-container:has(#slide-3:target) .indicator:nth-child(3),
-.carrossel-container:has(#slide-4:target) .indicator:nth-child(4),
-.carrossel-container:has(#slide-5:target) .indicator:nth-child(5),
-.carrossel-container:has(#slide-6:target) .indicator:nth-child(6) {
+.indicador[aria-current="true"] {
     background-color: #ffffff;
     transform: scale(1.2);
 }
 
-.carrossel-container:not(:has(:target)) .indicator:nth-child(1) {
-    background-color: #ffffff;
-    transform: scale(1.2);
+.carrossel-container button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carrossel { scroll-behavior: auto; }
 }
 
 /* Contato provisório para o botão ter um destino nesta primeira etapa. */
@@ -539,7 +542,7 @@ a:focus-visible, summary:focus-visible{
         font-size: 16px;
     }
 
-    .carrosel-container{
+    .carrossel-container{
         flex: 1;
         max-width: 480px;
     }

@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="carrossel.js" defer></script>
 </head>
 
 <body>
@@ -64,45 +65,45 @@
             
             <div class="carrossel-container">
                 <div class="carrossel">
-                    <div class="carrossel-item" id=slide-1>
+                    <div class="carrossel-item" id="slide-1">
                         <img src="assets/clinica.webp" alt="clinica odontologica">
-                        <a href="#slide-6" class="carrossel-btn prev">&lt;</a>
-                        <a href="#slide-2" class="carrossel-btn next">&gt;</a>
+                        <button type="button" data-slide="5" class="carrossel-btn prev" aria-label="Imagem anterior">&lt;</button>
+                        <button type="button" data-slide="1" class="carrossel-btn next" aria-label="Próxima imagem">&gt;</button>
                     </div>
                     <div class="carrossel-item" id="slide-2">
                         <img src="assets/clinica02.webp" alt="clinica ondotologica com quadro de dente">
-                        <a href="#slide-1" class="carrossel-btn prev">&lt;</a>
-                        <a href="#slide-3" class="carrossel-btn next">&gt;</a>
+                        <button type="button" data-slide="0" class="carrossel-btn prev" aria-label="Imagem anterior">&lt;</button>
+                        <button type="button" data-slide="2" class="carrossel-btn next" aria-label="Próxima imagem">&gt;</button>
                     </div>
                     <div class="carrossel-item" id="slide-3">
                         <img src="assets/clinica03.webp" alt="aparelho odontologico">
-                        <a href="#slide-2" class="carrossel-btn prev">&lt;</a>
-                        <a href="#slide-4" class="carrossel-btn next">&gt;</a>
+                        <button type="button" data-slide="1" class="carrossel-btn prev" aria-label="Imagem anterior">&lt;</button>
+                        <button type="button" data-slide="3" class="carrossel-btn next" aria-label="Próxima imagem">&gt;</button>
                     </div>
                     <div class="carrossel-item" id="slide-4">
                         <img src="assets/clinica04.webp" alt="scaner de boca com dente na tela">
-                        <a href="#slide-3" class="carrossel-btn prev">&lt;</a>
-                        <a href="#slide-5" class="carrossel-btn next">&gt;</a>
+                        <button type="button" data-slide="2" class="carrossel-btn prev" aria-label="Imagem anterior">&lt;</button>
+                        <button type="button" data-slide="4" class="carrossel-btn next" aria-label="Próxima imagem">&gt;</button>
                     </div>
                     <div class="carrossel-item" id="slide-5">
                         <img src="assets/clinica05.webp" alt="cadeira de dentista com tela ao lado">
-                        <a href="#slide-4" class="carrossel-btn prev">&lt;</a>
-                        <a href="#slide-6" class="carrossel-btn next">&gt;</a>
+                        <button type="button" data-slide="3" class="carrossel-btn prev" aria-label="Imagem anterior">&lt;</button>
+                        <button type="button" data-slide="5" class="carrossel-btn next" aria-label="Próxima imagem">&gt;</button>
                     </div>
                     <div class="carrossel-item" id="slide-6">
                         <img src="assets/clinica06.webp" alt="dentista analisando boca de pasciente">
-                        <a href="#slide-5" class="carrossel-btn prev">&lt;</a>
-                        <a href="#slide-1" class="carrossel-btn next">&gt;</a>
+                        <button type="button" data-slide="4" class="carrossel-btn prev" aria-label="Imagem anterior">&lt;</button>
+                        <button type="button" data-slide="0" class="carrossel-btn next" aria-label="Próxima imagem">&gt;</button>
                     </div>
                 </div>
 
                 <div class="carrossel-indicadores">
-                    <a href="#slide-1" class="indicador"></a>
-                    <a href="#slide-2" class="indicador"></a>
-                    <a href="#slide-3" class="indicador"></a>
-                    <a href="#slide-4" class="indicador"></a>
-                    <a href="#slide-5" class="indicador"></a>
-                    <a href="#slide-6" class="indicador"></a>
+                    <button type="button" data-slide="0" class="indicador" aria-label="Ir para imagem 1"></button>
+                    <button type="button" data-slide="1" class="indicador" aria-label="Ir para imagem 2"></button>
+                    <button type="button" data-slide="2" class="indicador" aria-label="Ir para imagem 3"></button>
+                    <button type="button" data-slide="3" class="indicador" aria-label="Ir para imagem 4"></button>
+                    <button type="button" data-slide="4" class="indicador" aria-label="Ir para imagem 5"></button>
+                    <button type="button" data-slide="5" class="indicador" aria-label="Ir para imagem 6"></button>
                 </div>
             </div>
         </section>
