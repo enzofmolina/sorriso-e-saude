@@ -123,7 +123,7 @@ a:focus-visible, summary:focus-visible{
     background-color: #dac8b3;
 }
 
-/* Primeira seção: a camada escura fica sobre a foto de fundo. */
+/* Abertura mobile first: foto em toda a largura e conteúdo em fluxo normal. */
 .inicio{
     min-height: 363px;
     background-image: linear-gradient(#00000040, #00000040), url("assets/dentista.webp");
@@ -135,31 +135,39 @@ a:focus-visible, summary:focus-visible{
 
 .inicio-conteudo{
     width: 100%;
-    max-width: 1120px;
-    margin: auto;
-    padding: 30px 7px;
+    padding: 30px 2%;
+}
+
+/* Uma única largura controla a caixa e o botão em qualquer tela.
+   clamp(mínimo, tamanho fluido, máximo) evita tamanhos extremos. */
+.inicio-chamada{
+    width: clamp(232px, 42vw, 540px);
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(15px, 1.5vw, 20px);
 }
 
 .chamada{
-    width: 222px;
-    max-width: 100%;
-    padding: 12px 11px 16px;
+    width: 100%;
+    padding: clamp(12px, 2.2vw, 32px);
     border-radius: 14px;
     background-color: #dac8b3;
 }
 
 .chamada h1{
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: clamp(10px, 1vw, 16px);
+    font-size: clamp(1.125rem, 2.5vw, 2.5rem);
     font-style: italic;
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.7px;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
 }
 
 .chamada p{
     color: #080808;
-    font-size: 8px;
+    font-size: clamp(0.625rem, 1vw, 0.875rem);
     font-weight: bold;
     line-height: 1.5;
 }
@@ -169,16 +177,20 @@ a:focus-visible, summary:focus-visible{
     justify-content: center;
     align-items: center;
     min-height: 44px;
-    margin-top: 15px;
-    margin-left: 23px;
-    padding: 10px 14px;
+    padding: clamp(12px, 1.3vw, 18px) clamp(8px, 1.5vw, 30px);
     background-color: #125f7c;
     color: white;
-    border-radius: 30px;
-    font-size: 14px;
+    border-radius: 14px;
+    font-size: clamp(0.875rem, 1.4vw, 1.25rem);
     font-weight: bold;
+    line-height: 1.4;
     text-align: center;
     text-decoration: none;
+}
+
+/* O Flexbox do pai centraliza: não é necessário calcular margin-left. */
+.inicio-chamada .botao{
+    width: 85%;
 }
 
 .botao:hover{
@@ -481,8 +493,7 @@ a:focus-visible, summary:focus-visible{
     transform: scale(1.1);
 }
 
-/* A partir de 768px, muda apenas o necessário para telas maiores.
-   Esta adaptação ainda precisa ser comparada ao seu Figma desktop. */
+/* Um único breakpoint de layout: adapta a composição para telas maiores. */
 @media (min-width: 768px){
     .cabecalho-conteudo{
         min-height: 88px;
@@ -493,35 +504,16 @@ a:focus-visible, summary:focus-visible{
         width: 140px;
     }
 
+    /* No desktop, a abertura acompanha a altura disponível.
+       min-height permite crescer se o texto precisar de mais espaço. */
     .inicio{
-        min-height: 560px;
-        background-position: center 40%;
+        min-height: calc(100svh - 88px);
+        background-position: center top;
+        background-image: linear-gradient(#00000066, #00000066), url("assets/dentista.webp");
     }
 
     .inicio-conteudo{
-        padding: 64px 32px;
-    }
-
-    .chamada{
-        width: 460px;
-        padding: 26px;
-        border-radius: 22px;
-    }
-
-    .chamada h1{
-        font-size: 34px;
-        letter-spacing: -1px;
-    }
-
-    .chamada p{
-        font-size: 13px;
-    }
-
-    .botao{
-        margin-top: 24px;
-        margin-left: 26px;
-        padding: 16px 26px;
-        font-size: 18px;
+        padding: 48px 7%;
     }
 
     .sobre{
