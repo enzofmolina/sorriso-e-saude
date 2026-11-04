@@ -1,5 +1,4 @@
-// Carrossel da equipe: setas e bolinhas movem só a faixa de profissionais,
-// sem mover a página nem o botão de agendar.
+// Carrossel da equipe
 (() => {
     const faixa = document.querySelector('.equipe-faixa');
     if (!faixa) return;

@@ -1,4 +1,4 @@
-/* Configuração inicial, como no seu exercício. */
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -45,7 +45,6 @@ a:focus-visible, summary:focus-visible{
     top: 10px;
 }
 
-/* Cabeçalho: logo e menu lado a lado com Flexbox. */
 .cabecalho{
     background-color: #dac8b3;
     position: sticky;
@@ -68,7 +67,6 @@ a:focus-visible, summary:focus-visible{
     width: 107px;
 }
 
-/* O próprio HTML controla a abertura do menu. */
 .menu{
     position: relative;
 }
@@ -188,7 +186,6 @@ a:focus-visible, summary:focus-visible{
     text-decoration: none;
 }
 
-/* O Flexbox do pai centraliza: não é necessário calcular margin-left. */
 .inicio-chamada .botao{
     width: 85%;
 }
@@ -197,7 +194,7 @@ a:focus-visible, summary:focus-visible{
     background-color: #064773;
 }
 
-/* Apresentação da clínica: no celular, os elementos ficam empilhados. */
+/* Apresentação da clínica */
 .sobre{
     max-width: 1120px;
     margin: auto;
@@ -235,7 +232,7 @@ a:focus-visible, summary:focus-visible{
     object-fit: cover;
 }
 
-/*carrossel de imagens da clínica*/
+
 .carrossel-container{
     min-width: 0;
     width: 100%;
@@ -341,7 +338,7 @@ a:focus-visible, summary:focus-visible{
     .carrossel { scroll-behavior: auto; }
 }
 
-/* Rodapé de contatos: no celular, a lista vem antes do logo. */
+/* Rodapé de contatos */
 .contato{
     padding: 56px 28px 48px;
     display: flex;
@@ -403,7 +400,6 @@ a:focus-visible, summary:focus-visible{
     line-height: 1.55;
 }
 
-/* Uma grade fluida: até três colunas no contêiner, sem regras por resolução. */
 .lista-tratamentos{
     list-style: none;
     margin-top: clamp(32px, 5vw, 64px);
@@ -557,7 +553,6 @@ a:focus-visible, summary:focus-visible{
     min-width: 0;
 }
 
-/* Dentro dos detalhes, mostrar a imagem completa, sem o recorte do card. */
 .tratamento-modal-imagem{
     width: 100%;
     height: auto;
@@ -601,8 +596,8 @@ a:focus-visible, summary:focus-visible{
     line-height: 1.5;
 }
 
+/* Equipe */
 
-/* Equipe: carrossel de profissionais com um único botão de agendar. */
 .equipe-secao{
     background-color: #043F6E;
     color: #ffffff;
@@ -749,7 +744,7 @@ a:focus-visible, summary:focus-visible{
     transform: scale(1.1);
 }
 
-/* Um único breakpoint de layout: adapta a composição para telas maiores. */
+/* adapta a composição para telas maiores. */
 @media (min-width: 768px){
     .cabecalho-conteudo{
         min-height: 88px;

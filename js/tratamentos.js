@@ -4,7 +4,6 @@
 
     if (!secao || !modal || typeof modal.showModal !== "function") return;
 
-    // Os cards continuam no HTML; somente as descrições complementares ficam aqui.
     const descricoes = {
     "clareamento": "Conheça as opções de clareamento e converse com a equipe sobre suas expectativas para o sorriso.",
     "lentes": "Um espaço para conversar sobre a aparência dos dentes e conhecer as possibilidades desse atendimento.",
@@ -52,13 +51,11 @@
         modal.close();
     });
 
-    // O dialog nativo já trata Esc e mantém o foco dentro da janela aberta.
     modal.addEventListener("close", () => {
         document.body.style.overflow = overflowAnterior;
         botaoOrigem?.focus({ preventScroll: true });
     });
 
-    // Fechar pelo fundo somente se o gesto começar e terminar fora da janela.
     const foraDaJanela = (evento) => {
         const area = modal.getBoundingClientRect();
         return evento.clientX < area.left || evento.clientX > area.right ||
@@ -74,7 +71,7 @@
     });
 
     modal.querySelector(".tratamento-agendar").addEventListener("click", () => {
-        // O próprio href leva ao contato; o foco acompanha esse destino.
+        
         botaoOrigem = null;
         modal.close();
         requestAnimationFrame(() => {

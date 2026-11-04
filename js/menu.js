@@ -1,4 +1,4 @@
-// Menu do celular: fecha ao escolher uma seção, ao clicar fora ou ao apertar Esc.
+
 const menuNavegacao = document.querySelector('.menu');
 
 // Fecha ao clicar em um link do menu.
