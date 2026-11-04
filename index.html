@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="js/carrossel.js" defer></script>
     <script src="js/menu.js" defer></script>
+    <script src="js/tratamentos.js" defer></script>
+    <script src="js/agendamento.js" defer></script>
+    <script src="js/equipe.js" defer></script>
 </head>
 
 <body>
@@ -42,11 +45,14 @@
     <main>
         <section class="inicio" id="inicio" aria-labelledby="titulo-principal">
             <div class="inicio-conteudo">
-                <div class="chamada">
-                    <h1 id="titulo-principal">Muito mais que estética:<br>o cuidado com saúde<br>começa pela boca.</h1>
-                    <p>Dentista em Bauru | Cuidado, Estética e Prevenção</p>
+                <!-- Caixa e botão compartilham a mesma largura responsiva. -->
+                <div class="inicio-chamada">
+                    <div class="chamada">
+                        <h1 id="titulo-principal">Muito mais que estética:<br>o cuidado com saúde<br>começa pela boca.</h1>
+                        <p>Dentista em Bauru | Cuidado, Estética e Prevenção</p>
+                    </div>
+                    <a class="botao" href="#contato">Agendar minha avaliação</a>
                 </div>
-                <a class="botao" href="#contato">Agendar minha avaliação</a>
             </div>
         </section>
 
@@ -117,84 +123,226 @@
 
             <ul class="lista-tratamentos">
                 <li class="cartao">
-                    <h3>Clareamento Dental</h3>
-                    <p>Devolve o brilho natural dos dentes e realça a beleza do seu sorriso com total segurança.</p>
+                    <div class="cartao-foto">
+                        <img src="assets/tratamentos/clareamento.webp" alt="Paciente recebendo atendimento para clareamento dental"
+                            width="1200" height="800" loading="lazy" decoding="async">
+                        <span class="cartao-numero" aria-hidden="true">01</span>
+                    </div>
+                    <div class="cartao-conteudo">
+                        <h3>Clareamento dental</h3>
+                        <p>Cuidados voltados à estética e à aparência do sorriso.</p>
+                        <button class="tratamento-saiba-mais" type="button" data-tratamento="clareamento"
+                            aria-haspopup="dialog" aria-controls="tratamento-modal" aria-label="Saiba mais sobre clareamento dental" hidden>
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
                 </li>
                 <li class="cartao">
-                    <h3>Lentes de Contato Dental</h3>
-                    <p>A solução perfeita para alinhar, corrigir o formato e a cor dos dentes, proporcionando um sorriso
-                        harmônico.</p>
+                    <div class="cartao-foto">
+                        <img src="assets/tratamentos/lentes.webp" alt="Comparação de sorrisos apresentada no protótipo da clínica"
+                            width="886" height="591" loading="lazy" decoding="async">
+                        <span class="cartao-numero" aria-hidden="true">02</span>
+                    </div>
+                    <div class="cartao-conteudo">
+                        <h3>Lentes de contato dental</h3>
+                        <p>Conheça as possibilidades para a estética do seu sorriso.</p>
+                        <button class="tratamento-saiba-mais" type="button" data-tratamento="lentes"
+                            aria-haspopup="dialog" aria-controls="tratamento-modal" aria-label="Saiba mais sobre lentes de contato dental" hidden>
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
                 </li>
                 <li class="cartao">
-                    <h3>Ortodontia (aparelhos)</h3>
-                    <p>Tratamentos modernos (metálicos, estéticos e alinhadores invisíveis) para alinhar os dentes de
-                        crianças, jovens e adultos.</p>
+                    <div class="cartao-foto">
+                        <img src="assets/tratamentos/ortodontia.webp" alt="Modelos de arcadas dentárias com e sem aparelho ortodôntico"
+                            width="1200" height="800" loading="lazy" decoding="async">
+                        <span class="cartao-numero" aria-hidden="true">03</span>
+                    </div>
+                    <div class="cartao-conteudo">
+                        <h3>Ortodontia</h3>
+                        <p>Atendimento para quem busca orientação sobre alinhamento dental.</p>
+                        <button class="tratamento-saiba-mais" type="button" data-tratamento="ortodontia"
+                            aria-haspopup="dialog" aria-controls="tratamento-modal" aria-label="Saiba mais sobre ortodontia" hidden>
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
                 </li>
                 <li class="cartao">
-                    <h3>Implantes Dentários</h3>
-                    <p>Recuperação da função mastigatória e da autoestima com próteses fixas sobre implantes de alta
-                        durabilidade.</p>
+                    <div class="cartao-foto">
+                        <img src="assets/tratamentos/implantes.webp" alt="Ilustração de implante dentário e coroa"
+                            width="1200" height="752" loading="lazy" decoding="async">
+                        <span class="cartao-numero" aria-hidden="true">04</span>
+                    </div>
+                    <div class="cartao-conteudo">
+                        <h3>Implantes dentários</h3>
+                        <p>Conheça o atendimento para reposição de dentes.</p>
+                        <button class="tratamento-saiba-mais" type="button" data-tratamento="implantes"
+                            aria-haspopup="dialog" aria-controls="tratamento-modal" aria-label="Saiba mais sobre implantes dentários" hidden>
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
                 </li>
                 <li class="cartao">
-                    <h3>Próteses Dentárias</h3>
-                    <p>Reposição de dentes perdidos com foco em conforto, estética natural e adaptação perfeita.</p>
+                    <div class="cartao-foto">
+                        <img src="assets/tratamentos/proteses.webp" alt="Modelos de próteses dentárias"
+                            width="1200" height="800" loading="lazy" decoding="async">
+                        <span class="cartao-numero" aria-hidden="true">05</span>
+                    </div>
+                    <div class="cartao-conteudo">
+                        <h3>Próteses dentárias</h3>
+                        <p>Orientação sobre alternativas de reposição dentária.</p>
+                        <button class="tratamento-saiba-mais" type="button" data-tratamento="proteses"
+                            aria-haspopup="dialog" aria-controls="tratamento-modal" aria-label="Saiba mais sobre próteses dentárias" hidden>
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
                 </li>
                 <li class="cartao">
-                    <h3>Odontopediatria</h3>
-                    <p>Cuidado especializado e lúdico para os pequenos, garantindo que a ida ao dentista seja uma
-                        experiência leve desde a infância.</p>
+                    <div class="cartao-foto">
+                        <img src="assets/tratamentos/odontopediatria.webp" alt="Criança conhecendo um modelo dentário durante o atendimento"
+                            width="1200" height="1000" loading="lazy" decoding="async">
+                        <span class="cartao-numero" aria-hidden="true">06</span>
+                    </div>
+                    <div class="cartao-conteudo">
+                        <h3>Odontopediatria</h3>
+                        <p>Acolhimento e atenção à saúde bucal dos pequenos.</p>
+                        <button class="tratamento-saiba-mais" type="button" data-tratamento="odontopediatria"
+                            aria-haspopup="dialog" aria-controls="tratamento-modal" aria-label="Saiba mais sobre odontopediatria" hidden>
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
                 </li>
                 <li class="cartao">
-                    <h3>Limpeza e Prevenção</h3>
-                    <p>Remoção de tártaro e placa bacteriana, aplicação de flúor e orientações de higiene para toda a
-                        família.</p>
+                    <div class="cartao-foto">
+                        <img src="assets/tratamentos/prevencao.webp" alt="Paciente sorrindo durante consulta odontológica"
+                            width="1200" height="800" loading="lazy" decoding="async">
+                        <span class="cartao-numero" aria-hidden="true">07</span>
+                    </div>
+                    <div class="cartao-conteudo">
+                        <h3>Limpeza e prevenção</h3>
+                        <p>Um espaço para cuidar e esclarecer dúvidas sobre saúde bucal.</p>
+                        <button class="tratamento-saiba-mais" type="button" data-tratamento="prevencao"
+                            aria-haspopup="dialog" aria-controls="tratamento-modal" aria-label="Saiba mais sobre limpeza e prevenção" hidden>
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
                 </li>
                 <li class="cartao">
-                    <h3>Tratamento de Canal</h3>
-                    <p>Tecnologia avançada para salvar dentes comprometidos, eliminando a dor com total conforto para o
-                        paciente.</p>
+                    <div class="cartao-foto">
+                        <img src="assets/tratamentos/canal.webp" alt="Paciente em atendimento odontológico com isolamento dental"
+                            width="1000" height="800" loading="lazy" decoding="async">
+                        <span class="cartao-numero" aria-hidden="true">08</span>
+                    </div>
+                    <div class="cartao-conteudo">
+                        <h3>Tratamento de canal</h3>
+                        <p>Informação e acolhimento em cada etapa do atendimento.</p>
+                        <button class="tratamento-saiba-mais" type="button" data-tratamento="canal"
+                            aria-haspopup="dialog" aria-controls="tratamento-modal" aria-label="Saiba mais sobre tratamento de canal" hidden>
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
                 </li>
                 <li class="cartao">
-                    <h3>Harmonização Orofacial</h3>
-                    <p>Procedimentos estéticos complementares (como toxina botulínica e preenchimento labial) para
-                        emoldurar o seu novo sorriso.</p>
+                    <div class="cartao-foto">
+                        <img src="assets/tratamentos/harmonizacao.webp" alt="Profissional realizando procedimento na região facial"
+                            width="678" height="452" loading="lazy" decoding="async">
+                        <span class="cartao-numero" aria-hidden="true">09</span>
+                    </div>
+                    <div class="cartao-conteudo">
+                        <h3>Harmonização orofacial</h3>
+                        <p>Conheça o atendimento e converse sobre suas expectativas.</p>
+                        <button class="tratamento-saiba-mais" type="button" data-tratamento="harmonizacao"
+                            aria-haspopup="dialog" aria-controls="tratamento-modal" aria-label="Saiba mais sobre harmonização orofacial" hidden>
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
                 </li>
             </ul>
         </section>
 
-        <section class="profissional" id="profissional">
-            <div class="profissional-apresentacao">
-                <div>
-                    <h2>Dra. Jane Doe - Cirurgiã-Dentista</h2>
+        <section class="equipe-secao" id="profissional" aria-labelledby="titulo-equipe">
+            <h2 id="titulo-equipe">Nossa equipe</h2>
+
+            <div class="equipe-janela">
+                <div class="equipe-faixa">
+                    <article class="equipe-slide">
+                        <img class="equipe-foto" src="assets/dentista_sentada.webp" alt="Dra. Jane Doe sentada no consultório" loading="lazy">
+                        <div class="equipe-info">
+                            <h3>Dra. Jane Doe</h3>
+                            <p class="equipe-cro">Cirurgiã-Dentista · CRO-SP 123456</p>
+                            <p>Formada pela Universidade Estadual Paulista (UNESP - Botucatu) em 2014, com mais de 10 anos de experiência clínica. Acredita que um sorriso saudável vai muito além da estética: ele representa autoestima, bem-estar e qualidade de vida.</p>
+                        </div>
+                    </article>
+
+                    <article class="equipe-slide">
+                        <img class="equipe-foto" src="assets/equipe-carlos.webp" alt="Dr. Carlos Lima, ortodontista" loading="lazy">
+                        <div class="equipe-info">
+                            <h3>Dr. Carlos Lima</h3>
+                            <p class="equipe-cro">Ortodontista · CRO-SP 000000</p>
+                            <p>Cuida de quem usa aparelho, de crianças a adultos, com acompanhamento próximo em cada etapa do tratamento.</p>
+                        </div>
+                    </article>
+
+                    <article class="equipe-slide">
+                        <img class="equipe-foto" src="assets/equipe-marina.webp" alt="Dra. Marina Rocha, odontopediatra" loading="lazy">
+                        <div class="equipe-info">
+                            <h3>Dra. Marina Rocha</h3>
+                            <p class="equipe-cro">Odontopediatra · CRO-SP 000000</p>
+                            <p>Transforma a ida ao dentista em uma experiência leve e acolhedora para os pequenos.</p>
+                        </div>
+                    </article>
                 </div>
-                <div class="profissional-apresentacao-cro">
-                    <p>(CRO-SP 123456)</p>
-                </div>
-                <img src="assets/dentista_sentada.webp" alt="Dentista vestida de branco sentada e sorrindo">
             </div>
-            <div class="profissional-conteudo">
-                <p>Prazer, sou a Dra. Jane Doe.<br><br>Sou cirurgiã-dentista formada pela Universidade Estadual Paulista 
-                (UNESP - Botucatu) em 2014, com mais de 10 anos de experiência clínica.<br><br>Sou apaixonada por cuidar 
-                de pessoas e transformar vidas por meio da prevenção. Acredito que um sorriso saudável vai muito além da 
-                estética — ele representa autoestima, bem-estar e qualidade de vida.</p>
-                <div class="profissional-ali">
-                    <a href="#contato">
-                        <button class="profissional-botao">Agendar Consulta</button>
-                    </a>
+
+            <div class="equipe-controles">
+                <button type="button" class="equipe-seta anterior" aria-label="Profissional anterior">&lt;</button>
+                <div class="equipe-bolinhas">
+                    <button type="button" class="equipe-bolinha" aria-label="Ver profissional 1"></button>
+                    <button type="button" class="equipe-bolinha" aria-label="Ver profissional 2"></button>
+                    <button type="button" class="equipe-bolinha" aria-label="Ver profissional 3"></button>
                 </div>
+                <button type="button" class="equipe-seta proxima" aria-label="Próximo profissional">&gt;</button>
+            </div>
+
+            <!-- Botão único, fora do carrossel: não se move com os slides. -->
+            <div class="profissional-ali">
+                <a class="profissional-botao" href="#contato">Agendar Consulta</a>
             </div>
         </section>
     </main>
 
 
 
-    <!-- Destino provisório dos botões, usando o e-mail presente no protótipo.
-              Confirmar os dados antes de publicar e acrescentar as demais seções. -->
     <footer class="contato" id="contato">
-        <h2>Agendar consulta</h2>
-        <a href="mailto:contato@sorrisoesaude.com.br">contato@sorrisoesaude.com.br</a>
-        <p>Segunda a sexta, das 8h30 às 19h<br>Sábado, das 8h30 às 12h</p>
+        <img class="contato-logo" src="assets/logo2.png" alt="Sorriso & Saúde — Clínica Odontológica" width="214" height="86">
+        <ul class="contato-lista">
+            <li><span aria-hidden="true">🕐</span><span>Segunda à sexta de 8:30h às 19:00h<br>Sábado de 8:30h às 12:00h</span></li>
+            <li><span aria-hidden="true">📍</span><span>Rua Baker 221B</span></li>
+            <li><span aria-hidden="true">✉️</span><a href="mailto:contato@sorrisoesaude.com.br">contato@sorrisoesaude.com.br</a></li>
+            <li><span aria-hidden="true">📞</span><a href="tel:+551412345678">14 1234-5678</a></li>
+        </ul>
     </footer>
+
+    <!-- Uma janela reutilizável: o JavaScript preenche o tratamento selecionado. -->
+    <dialog class="tratamento-modal" id="tratamento-modal" aria-labelledby="tratamento-modal-titulo">
+        <div class="tratamento-modal-topo">
+            <button class="tratamento-modal-fechar" type="button" aria-label="Fechar detalhes do tratamento" autofocus>×</button>
+        </div>
+        <div class="tratamento-modal-layout">
+            <figure class="tratamento-modal-figura">
+                <img class="tratamento-modal-imagem" id="tratamento-modal-imagem" alt="">
+            </figure>
+            <div class="tratamento-modal-conteudo">
+                <p class="tratamento-modal-etiqueta">Conheça o atendimento</p>
+                <h2 id="tratamento-modal-titulo"></h2>
+                <p id="tratamento-modal-descricao"></p>
+                <h3>Converse com a nossa equipe</h3>
+                <p>Na avaliação, você pode apresentar suas dúvidas e conversar sobre o atendimento adequado para você.</p>
+                <a class="botao tratamento-agendar" href="#contato">Quero agendar uma avaliação</a>
+                <small>O plano de atendimento é definido após avaliação individual.</small>
+            </div>
+        </div>
+    </dialog>
 </body>
 
 </html>
