@@ -14,6 +14,8 @@
     <script src="js/carrossel.js" defer></script>
     <script src="js/menu.js" defer></script>
     <script src="js/tratamentos.js" defer></script>
+    <script src="js/agendamento.js" defer></script>
+    <script src="js/equipe.js" defer></script>
 </head>
 
 <body>
@@ -258,38 +260,67 @@
             </ul>
         </section>
 
-        <section class="profissional" id="profissional">
-            <div class="profissional-apresentacao">
-                <div>
-                    <h2>Dra. Jane Doe - Cirurgiã-Dentista</h2>
+        <section class="equipe-secao" id="profissional" aria-labelledby="titulo-equipe">
+            <h2 id="titulo-equipe">Nossa equipe</h2>
+
+            <div class="equipe-janela">
+                <div class="equipe-faixa">
+                    <article class="equipe-slide">
+                        <img class="equipe-foto" src="assets/dentista_sentada.webp" alt="Dra. Jane Doe sentada no consultório" loading="lazy">
+                        <div class="equipe-info">
+                            <h3>Dra. Jane Doe</h3>
+                            <p class="equipe-cro">Cirurgiã-Dentista · CRO-SP 123456</p>
+                            <p>Formada pela Universidade Estadual Paulista (UNESP - Botucatu) em 2014, com mais de 10 anos de experiência clínica. Acredita que um sorriso saudável vai muito além da estética: ele representa autoestima, bem-estar e qualidade de vida.</p>
+                        </div>
+                    </article>
+
+                    <article class="equipe-slide">
+                        <img class="equipe-foto" src="assets/equipe-carlos.webp" alt="Dr. Carlos Lima, ortodontista" loading="lazy">
+                        <div class="equipe-info">
+                            <h3>Dr. Carlos Lima</h3>
+                            <p class="equipe-cro">Ortodontista · CRO-SP 000000</p>
+                            <p>Cuida de quem usa aparelho, de crianças a adultos, com acompanhamento próximo em cada etapa do tratamento.</p>
+                        </div>
+                    </article>
+
+                    <article class="equipe-slide">
+                        <img class="equipe-foto" src="assets/equipe-marina.webp" alt="Dra. Marina Rocha, odontopediatra" loading="lazy">
+                        <div class="equipe-info">
+                            <h3>Dra. Marina Rocha</h3>
+                            <p class="equipe-cro">Odontopediatra · CRO-SP 000000</p>
+                            <p>Transforma a ida ao dentista em uma experiência leve e acolhedora para os pequenos.</p>
+                        </div>
+                    </article>
                 </div>
-                <div class="profissional-apresentacao-cro">
-                    <p>(CRO-SP 123456)</p>
-                </div>
-                <img src="assets/dentista_sentada.webp" alt="Dentista vestida de branco sentada e sorrindo">
             </div>
-            <div class="profissional-conteudo">
-                <p>Prazer, sou a Dra. Jane Doe.<br><br>Sou cirurgiã-dentista formada pela Universidade Estadual Paulista 
-                (UNESP - Botucatu) em 2014, com mais de 10 anos de experiência clínica.<br><br>Sou apaixonada por cuidar 
-                de pessoas e transformar vidas por meio da prevenção. Acredito que um sorriso saudável vai muito além da 
-                estética — ele representa autoestima, bem-estar e qualidade de vida.</p>
-                <div class="profissional-ali">
-                    <a href="#contato">
-                        <button class="profissional-botao">Agendar Consulta</button>
-                    </a>
+
+            <div class="equipe-controles">
+                <button type="button" class="equipe-seta anterior" aria-label="Profissional anterior">&lt;</button>
+                <div class="equipe-bolinhas">
+                    <button type="button" class="equipe-bolinha" aria-label="Ver profissional 1"></button>
+                    <button type="button" class="equipe-bolinha" aria-label="Ver profissional 2"></button>
+                    <button type="button" class="equipe-bolinha" aria-label="Ver profissional 3"></button>
                 </div>
+                <button type="button" class="equipe-seta proxima" aria-label="Próximo profissional">&gt;</button>
+            </div>
+
+            <!-- Botão único, fora do carrossel: não se move com os slides. -->
+            <div class="profissional-ali">
+                <a class="profissional-botao" href="#contato">Agendar Consulta</a>
             </div>
         </section>
     </main>
 
 
 
-    <!-- Destino provisório dos botões, usando o e-mail presente no protótipo.
-              Confirmar os dados antes de publicar e acrescentar as demais seções. -->
     <footer class="contato" id="contato">
-        <h2>Agendar consulta</h2>
-        <a href="mailto:contato@sorrisoesaude.com.br">contato@sorrisoesaude.com.br</a>
-        <p>Segunda a sexta, das 8h30 às 19h<br>Sábado, das 8h30 às 12h</p>
+        <img class="contato-logo" src="assets/logo2.png" alt="Sorriso & Saúde — Clínica Odontológica" width="214" height="86">
+        <ul class="contato-lista">
+            <li><span aria-hidden="true">🕐</span><span>Segunda à sexta de 8:30h às 19:00h<br>Sábado de 8:30h às 12:00h</span></li>
+            <li><span aria-hidden="true">📍</span><span>Rua Baker 221B</span></li>
+            <li><span aria-hidden="true">✉️</span><a href="mailto:contato@sorrisoesaude.com.br">contato@sorrisoesaude.com.br</a></li>
+            <li><span aria-hidden="true">📞</span><a href="tel:+551412345678">14 1234-5678</a></li>
+        </ul>
     </footer>
 
     <!-- Uma janela reutilizável: o JavaScript preenche o tratamento selecionado. -->

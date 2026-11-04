@@ -341,26 +341,45 @@ a:focus-visible, summary:focus-visible{
     .carrossel { scroll-behavior: auto; }
 }
 
-/* Contato provisório para o botão ter um destino nesta primeira etapa. */
+/* Rodapé de contatos: no celular, a lista vem antes do logo. */
 .contato{
-    padding: 32px 20px;
+    padding: 56px 28px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    background-color: #fcf4e9;
+}
+
+.contato-lista{
+    order: 1;
+    list-style: none;
+    display: grid;
+    gap: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contato-lista li{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.contato-lista li > span[aria-hidden="true"]{
+    flex: 0 0 32px;
+    font-size: 28px;
+    line-height: 1;
     text-align: center;
-    background-color: #dac8b3;
 }
 
-.contato h2{
-    margin-bottom: 16px;
-    font-size: 22px;
-}
-
-.contato a{
+.contato-lista a{
     overflow-wrap: anywhere;
 }
 
-.contato p{
-    margin-top: 16px;
-    font-size: 14px;
-    line-height: 1.6;
+.contato-logo{
+    order: 2;
+    width: 180px;
 }
 
 /* Tratamentos */
@@ -583,59 +602,126 @@ a:focus-visible, summary:focus-visible{
 }
 
 
-/* Apresentação Profissional */
-.profissional{
+/* Equipe: carrossel de profissionais com um único botão de agendar. */
+.equipe-secao{
     background-color: #043F6E;
-    width: 100%;
-    padding: 40px 20px;
+    color: #ffffff;
+    padding: 40px 20px 48px;
+    text-align: center;
+}
+
+.equipe-secao h2{
+    margin-bottom: 28px;
+    font-size: 22px;
+}
+
+.equipe-janela{
+    max-width: 960px;
+    margin: auto;
+}
+
+.equipe-faixa{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.equipe-faixa::-webkit-scrollbar{
+    display: none;
+}
+
+.equipe-slide{
+    flex: 0 0 100%;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
+    gap: 24px;
 }
 
-.profissional img{
-    max-width: 85%;
+.equipe-foto{
+    width: min(100%, 260px);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     border-radius: 24px;
-    height: auto;
-    margin: 0 auto;
 }
 
-.profissional-conteudo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 600px;
+.equipe-info{
+    max-width: 520px;
 }
 
-.profissional-apresentacao{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.equipe-info h3{
+    font-size: 20px;
 }
 
-.profissional-apresentacao-cro{
-    padding-bottom: 24px;
+.equipe-cro{
+    margin: 4px 0 14px;
+    font-size: 14px;
+    font-weight: 700;
 }
 
-.profissional-apresentacao h2,
-.profissional-apresentacao-cro p{
-    color: #FFFFFF;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
-}
-
-.profissional-conteudo p{
-    color: #FFFFFF;
+.equipe-info p:not(.equipe-cro){
     font-size: 16px;
-    font-weight: 400;
     line-height: 1.5;
-    text-align: center;
 }
+
+.equipe-controles{
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.equipe-seta{
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #ffffff33;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.equipe-seta:hover{
+    background-color: #ffffff55;
+}
+
+.equipe-bolinhas{
+    display: flex;
+    gap: 8px;
+}
+
+.equipe-bolinha{
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.equipe-bolinha[aria-current="true"]{
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
+
+.equipe-seta:focus-visible,
+.equipe-bolinha:focus-visible{
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .equipe-faixa{ scroll-behavior: auto; }
+}
+
 
 .profissional-ali{
     display: flex;
@@ -645,6 +731,8 @@ a:focus-visible, summary:focus-visible{
 }
 
 .profissional-botao{
+    display: inline-block;
+    text-decoration: none;
     cursor: pointer;
     background-color: #FFFFFF;
     color: #043F6E;
@@ -720,22 +808,60 @@ a:focus-visible, summary:focus-visible{
         font-size: 16px;
     }
 
-    .profissional{
+
+    .equipe-secao h2{
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .equipe-janela{
+        max-width: 1120px;
+    }
+
+    .equipe-slide{
         flex-direction: row;
-        gap: 120px;
-        padding: 45px 44px 73px 44px;
-    }
-
-    .profissional img{
-        max-width: 300px;
-    }
-
-    .profissional-conteudo{
-        align-items: flex-start;
-    }
-
-    .profissional-conteudo p{
+        justify-content: center;
+        align-items: center;
+        gap: 72px;
         text-align: left;
+    }
+
+    .equipe-foto{
+        width: 380px;
+        flex: 0 0 380px;
+    }
+
+    .equipe-info h3{
+        font-size: 28px;
+    }
+
+    .equipe-cro{
         font-size: 17px;
+        margin: 6px 0 18px;
+    }
+
+    .equipe-info p:not(.equipe-cro){
+        font-size: 19px;
+        line-height: 1.6;
+    }
+
+    .equipe-info{
+        max-width: 560px;
+    }
+
+    .contato{
+        flex-direction: row;
+        justify-content: center;
+        gap: 80px;
+        padding: 64px 32px;
+    }
+
+    .contato-lista{
+        order: 2;
+    }
+
+    .contato-logo{
+        order: 1;
+        width: 220px;
     }
 }
